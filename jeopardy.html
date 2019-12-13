@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- do not cache images-->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./app/app.css">
+
+    <title>MySQL</title>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+        <h2 class="text-center">MySQL Jeopardy</h2>
+        <h6 class="text-center">Powered by Bootstrap (Don't refresh the browser)</h6>
+        <table id="app_table" class="table table-bordered"></table>
+        <table id="score_table" class="col-3 table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Team</th>
+                    <th scope="col" style="width: 100px">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" id="blue_name" class="text-primary"></th>
+                    <td id="blue_score" class="no_select"></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="red_name" class="text-danger"></th>
+                    <td id="red_score" class="no_select"></td>
+                </tr>
+            </tbody>
+        </table>
+               
+
+    </div>
+
+    <!-- The Modal -->
+<div class="modal" id="app_modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 id="app_modal_title" class="modal-title"></h4>
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="text-center no_select">
+              <div id="app_modal_question" class="is_visible"></div>
+              <div id="app_modal_answer" class="not_visible"></div>          
+          </div>
+            
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+
+          <div class="mr-auto">
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <!--<label class="btn btn-secondary active">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off"> Active
+                                                  </label> -->
+              <label class="btn btn-primary" id="btn_blue_right" onclick="blue_right()">
+                <input type="radio" name="blue_options" autocomplete="off"> Right
+              </label>
+              <label class="btn btn-primary" id="btn_blue_wrong" onclick="blue_wrong()">
+                <input type="radio" name="blue_options" autocomplete="off"> Wrong
+              </label>
+            </div>
+            
+            <div class="btn-group btn-group-toggle mr-auto" data-toggle="buttons">
+              <label class="btn btn-danger" id="btn_red_right" onclick="red_right()">
+                <input type="radio" name="red_options" autocomplete="off"> Right
+              </label>
+              <label class="btn btn-danger" id="btn_red_wrong" onclick="red_wrong()">
+                <input type="radio" name="red_options" autocomplete="off"> Wrong
+              </label>
+            </div>
+
+          </div>          
+
+          <button onclick="show_answer()" type="button" class="btn btn-info">Show Answer</button>
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+</div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./app/game_data.js"></script>
+    <script src="./app/config.js"></script>
+    <script src="./app/app.js"></script>
+  </body>
+</html>
